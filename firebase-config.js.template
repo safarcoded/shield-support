@@ -1,0 +1,11 @@
+// Copy this file to firebase-config.js and paste the values from:
+// Firebase Console → Project settings → Your apps → S.H.I.E.L.D. Student Portal → Config.
+// These are web app config values, not authorization controls. Firestore Rules remain authoritative.
+export const firebaseConfig = {
+  apiKey: "REPLACE_WITH_STUDENT_PORTAL_API_KEY",
+  authDomain: "shield-5333e.firebaseapp.com",
+  projectId: "shield-5333e",
+  storageBucket: "shield-5333e.firebasestorage.app",
+  messagingSenderId: "389231635109",
+  appId: "REPLACE_WITH_STUDENT_PORTAL_APP_ID"
+};

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F5EF">
+  <meta name="description" content="Send a private first-contact request to S.H.I.E.L.D. No student account is required.">
+  <title>Request Support | S.H.I.E.L.D.</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .request-wrap{max-width:820px;margin-inline:auto}.request-form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,34px);box-shadow:var(--shadow)}
+    .request-form form{display:grid;gap:9px}.request-form label{display:block;font-weight:750;font-size:.92rem;margin-top:8px}.request-form input,.request-form select,.request-form textarea{width:100%;border:1px solid #c8d8d3;border-radius:11px;padding:12px 14px;font:inherit;color:var(--ink);background:#fff}.request-form input,.request-form select{min-height:48px}.request-form textarea{min-height:150px;resize:vertical}.request-form input:focus-visible,.request-form select:focus-visible,.request-form textarea:focus-visible{outline:3px solid #E4A94B;outline-offset:2px}.checkrow{display:flex;align-items:flex-start;gap:10px;margin-top:15px;line-height:1.5}.checkrow input{width:19px;min-height:19px;height:19px;flex:0 0 19px;margin-top:4px}.checkrow label{font-weight:500;margin-top:0}.request-status{display:none;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:16px;overflow-wrap:anywhere}.request-status.show{display:block}.request-status.error{background:#fff2ef;border-color:#efc4bc;color:#802d24}.request-status.success{background:#eaf6f0;border-color:#b9ddc9;color:#20563b}.request-reference{font-weight:800;word-break:break-all}.field-hint{font-size:.84rem;color:var(--muted);margin:2px 0 7px}.closed-banner{border:1px solid #E7D8B7;background:#FFF9EB;border-radius:15px;padding:17px 19px;color:#6B5429;margin-top:20px}.closed-banner p{margin:6px 0 0}.request-submit[disabled]{opacity:.6;cursor:not-allowed}
+  </style>
+  <script type="module" src="support-request.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html" aria-label="S.H.I.E.L.D. home"><span class="brand-mark" aria-hidden="true">🛡</span><span>S.H.I.E.L.D.<small>Student Help Initiative</small></span></a>
+  <a class="button button-secondary" href="get-support.html">Back to Get Support</a>
+</div></header>
+<main id="main">
+  <section class="page-hero"><div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="get-support.html">Get Support</a> / Request Support</div>
+    <span class="eyebrow">No student account required</span>
+    <h1>Tell us how we can contact you.</h1>
+    <p class="lead">This is a first-contact request, not a decision about your case. S.H.I.E.L.D. will review requests through its authorized team when the intake process is open.</p>
+  </div></section>
+  <section class="section"><div class="container request-wrap">
+    <div class="notice"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v5m0 3h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><p><strong>Important:</strong> This form is not an emergency service. Do not use it for immediate danger. Contact local emergency services or a trusted adult if you need urgent help. Do not upload or include identity documents, passwords, bank details, or private information about other students.</p></div>
+    <div id="intakeClosed" class="closed-banner"><strong>Requests are not open yet.</strong><p>We're finishing privacy, spam-prevention and review safeguards. This page is in preparation and is not currently accepting or storing submissions. Please don't enter real personal information until the request form is formally opened.</p></div>
+    <div class="request-form" style="margin-top:22px">
+      <h2 style="font-size:1.8rem">Support request</h2>
+      <p class="small">When the form opens, you can contact us without creating an account. We ask only for information needed to understand the request and respond.</p>
+      <form id="supportRequestForm" novalidate>
+        <label for="preferredName">Name you would like us to use</label>
+        <input id="preferredName" name="preferredName" type="text" minlength="2" maxlength="80" autocomplete="name" required disabled>
+        <label for="contactEmail">Email address where we can reply</label>
+        <input id="contactEmail" name="contactEmail" type="email" maxlength="254" autocomplete="email" required disabled>
+        <label for="institution">Educational institution / coaching centre</label>
+        <input id="institution" name="institution" type="text" minlength="2" maxlength="120" required disabled>
+        <label for="concernType">What is your concern about?</label>
+        <select id="concernType" name="concernType" required disabled>
+          <option value="">Choose a category</option>
+          <option value="potentially-unfair-penalty">A potentially unfair fine or penalty</option>
+          <option value="administrative-charge">A disputed administrative or replacement charge</option>
+          <option value="group-penalty">A group penalty or mistaken identification</option>
+          <option value="other">Another related concern</option>
+        </select>
+        <label for="summary">Brief summary</label>
+        <textarea id="summary" name="summary" minlength="30" maxlength="1500" required disabled placeholder="In a few sentences, explain what happened and what kind of guidance you are seeking."></textarea>
+        <p class="field-hint">Keep it brief. Don't include roll numbers, government ID numbers, medical details, financial account details, passwords, or other students' names. We may ask for relevant details later through an approved process.</p>
+        <div class="checkrow"><input id="privacyAcknowledged" name="privacyAcknowledged" type="checkbox" required disabled><label for="privacyAcknowledged">I understand that this information will be reviewed by authorized S.H.I.E.L.D. personnel to consider my request, that it is not public, and that submitting a request does not guarantee a response time, a case outcome, or financial assistance.</label></div>
+        <button class="button button-primary request-submit" id="submitRequestButton" type="submit" disabled>Request support</button>
+      </form>
+      <div id="requestStatus" class="request-status" role="status" aria-live="polite"></div>
+    </div>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-bottom"><span>S.H.I.E.L.D. · Every Student Deserves to Be Heard.</span><span><a href="privacy.html">Privacy principles</a> · <a href="applicant-rights.html">Applicant rights</a></span></div></div></footer>
+<script src="app.js" defer></script>
+</body>
+</html>
